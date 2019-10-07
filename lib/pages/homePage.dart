@@ -6,24 +6,36 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _cursos = 0;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text(
-          "Hello World!",
+          "Cursos",
           textAlign: TextAlign.center,
-          style: TextStyle(
-              color: Colors.blueAccent, decoration: TextDecoration.none),
+          style: Theme.of(context).textTheme.display4,
         ),
         Text(
-          "animado com dart!",
+          "Você completou $_cursos cursos!",
           textAlign: TextAlign.center,
-          style: TextStyle(
-              color: Colors.purpleAccent,
-              fontSize: 35,
-              decoration: TextDecoration.none),
+          style: Theme.of(context)
+              .textTheme
+              .display1
+              .copyWith(fontWeight: FontWeight.w300),
+        ),
+        Padding(
+          padding: EdgeInsets.all(20),
+          child: FloatingActionButton(
+            onPressed: () {
+              setState(() {
+                _cursos++;
+              });
+            },
+            child: Icon(Icons.add),
+          ),
         ),
       ],
     );
