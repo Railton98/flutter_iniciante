@@ -10,7 +10,7 @@ class Template extends StatefulWidget {
 class _TemplateState extends State<Template> {
   var homePage = new HomePage();
   var schoolPage = new SchoolPage();
-  var _selectedPage = 1;
+  var _selectedPage = 0;
 
   var _pages;
 
